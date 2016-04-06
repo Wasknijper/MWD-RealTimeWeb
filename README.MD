@@ -28,21 +28,30 @@
 - Cetrain location can only be accessed by people of a certain level
 - Users levels unlock new pokemon in old locations
 
+###Assignments (Idea by Laurens)
+- User gets an assignment to snap a certain Pokemon
+- Completing an assignment grants the user exp and some pokedollars
+
 ###Items
 - Users can randomly find pokedollars to buy items with, ie:
 - Repels: make common pokemon appear less often
 - Amulet Coin: boots pokedollars user finds
-
 
 ###Companion Pokemon
 - User can choose to catch one Pokemon they see, non-legendary
 - Pokemon gives a boost to the user, ie. Mudkip gives a boost to water pokemon appearing, Meowth makes pokedollars more likely to appear
 - Display companion pokemon on user profile
 
-###Traveling (Leander)
+###Traveling (Idea by Leander)
 - Going to a new location takes time (30 seconds?)
 - Traveling faster costs money
 
 ###Bribing users
 - More users in a location means less uncommon, rare and legendary pokemon appear, because they're shy
 - User can choose to send money to other users, asking them to leave the location for a certain amount of time
+
+###Achievements
+- Vanity badges to show how awesome you are
+
+###Pokedex
+- Look up information on the pokemon and where you can find them
