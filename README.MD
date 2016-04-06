@@ -55,3 +55,6 @@
 
 ###Pokedex
 - Look up information on the pokemon and where you can find them
+
+###Weather, Seasons and time
+- Pokemon change depending on the current weather, season and time, ie: if its raining, fire pokemon appear less often, ghost pokemon only appear at night.
