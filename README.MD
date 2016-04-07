@@ -1,39 +1,43 @@
 #Pokemon Snap - Browser Edition
 
 ##MVP:
-- Random pokemon is generated, at a pseudo-random time, disapears after a certain amount of time.
+- Random pokemon is generated, at a pseudo-random time, disapears after a certain amount of time. (real-time)
 - User clicks on the pokemon and pokemon is added to their list of pokemon that they snapped.
-- Other users can see wich pokemon they have snapped.
-- Activity feed, users can see real-time when someone snaps a pokemon
+- Other users can see wich pokemon they have snapped.(real-time)
+- Activity feed, users can see real-time when someone snaps a pokemon (real-time)
 
 
-##Nice to have, from most important to least important:
+##Future features, from most important to least important:
 
 ###Pokemon rarity
 - Pokemon sorted by rarity, from least to most rare: common, uncommon, rare and legendary.
-- Pokemon appear depending on their rarity. 
+- Pokemon appear depending on their rarity. (real-time)
 
 ### Locations
 - Locations, different location have different pokemon
-- Location activity, see the amount of users currently in the location
-- Pokemon can only be snapped by X amount of people in the location or until time runs out
+- Location activity, see the amount of users currently in the location (real-time)
+- Pokemon can only be snapped by X amount of people in the location or until time runs out (real-time)
 
 ###Canvas export
 - When user snaps a pokemon, the part of the canvas wich holds the pokemon is saved
-- This photo is added to the users profile and can be seen by others
+- This photo is added to the users profile and can be seen by others (real-time)
 - Users can set a photo as their favorite photo
 
 ### User Levels
 - User gains exp if they snap a new pokemon
+- Notification in activity if user levels up (real-time)
 - Cetrain location can only be accessed by people of a certain level
 - Users levels unlock new pokemon in old locations
 
 ###Assignments (Idea by Laurens)
 - User gets an assignment to snap a certain Pokemon
+- Notice of someone complete an assignment (real-time)
 - Completing an assignment grants the user exp and some pokedollars
 
 ###Items
-- Users can randomly find pokedollars to buy items with, ie:
+- Users can randomly find pokedollars to buy items with. (Real-time, only one user can grab the money)
+
+####Example items:
 - Repels: make common pokemon appear less often
 - Amulet Coin: boots pokedollars user finds
 
@@ -47,8 +51,8 @@
 - Traveling faster costs money
 
 ###Bribing users
-- More users in a location means less uncommon, rare and legendary pokemon appear, because they're shy
-- User can choose to send money to other users, asking them to leave the location for a certain amount of time
+- More users in a location means less uncommon, rare and legendary pokemon appear, because they're shy (real-time)
+- User can choose to send money to other users, asking them to leave the location for a certain amount of time (real-time)
 
 ###Achievements
 - Vanity badges to show how awesome you are
@@ -57,4 +61,8 @@
 - Look up information on the pokemon and where you can find them
 
 ###Weather, Seasons and time
-- Pokemon change depending on the current weather, season and time, ie: if its raining, fire pokemon appear less often, ghost pokemon only appear at night.
+- Pokemon change depending on the current weather, season and time, ie: if its raining, fire pokemon appear less often, ghost pokemon only appear at night. (real-time)
+
+###Add a chat function (real-time)
+
+###Data valideren
