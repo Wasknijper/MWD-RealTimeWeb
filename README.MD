@@ -35,7 +35,7 @@
 - Completing an assignment grants the user exp and some pokedollars
 
 ###Items
-- Users can randomly find pokedollars to buy items with. (Real-time, only one user can grab the money)
+- Users can randomly find pokedollars to buy items with. **(Real-time, only one user can grab the money)**
 
 ####Example items:
 - Repels: make common pokemon appear less often
