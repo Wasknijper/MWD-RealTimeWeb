@@ -36,10 +36,9 @@
 
 ###Items
 - Users can randomly find pokedollars to buy items with. **(Real-time, only one user can grab the money)**
-
-####Example items:
-- Repels: make common pokemon appear less often
-- Amulet Coin: boots pokedollars user finds
+- *Example items:*
+  - Repels: make common pokemon appear less often
+  - Amulet Coin: boots pokedollars user finds
 
 ###Companion Pokemon
 - User can choose to catch one Pokemon they see, non-legendary
