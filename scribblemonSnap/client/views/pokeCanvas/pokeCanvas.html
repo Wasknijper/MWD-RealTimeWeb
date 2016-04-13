@@ -1,0 +1,11 @@
+<template name="pokeCanvas">
+	<p id="message">{{message}}</p>
+	{{#if pokemon}}
+		{{#with pokemon}}
+			<a id="pokemon" href="#">
+				<img src="pokemon/{{number}}-{{nameLowercase}}.png" alt="{{name}}"/>
+				<h2>{{name}}</h2>
+			</a>
+		{{/with}}
+	{{/if}}
+</template>
