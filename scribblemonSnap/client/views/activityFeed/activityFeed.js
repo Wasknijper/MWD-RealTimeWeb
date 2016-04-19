@@ -4,6 +4,6 @@ Template.activityFeed.onCreated(function activityFeedOnCreated() {
 
 Template.activityFeed.helpers({
 	activity: function() {
-		return Activity.find({}, {sort: {time: -1}});
+		return Activity.find({}, {sort: {time: -1}, limit: 15});
 	}
 });

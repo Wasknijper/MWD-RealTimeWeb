@@ -1,7 +1,7 @@
 Meteor.methods({
     'snapPokemon' : function(pokemon){
         var targetPoke = pokemon;
-        var snappedPoke = SnappedPokemon.findOne({_id: targetPoke._id });
+        var snappedPoke = SnappedPokemon.findOne({oldId: pokemon._id });
         var isSeen;
         console.log('snap Pokemon fired with: ' + pokemon);
 
@@ -12,22 +12,18 @@ Meteor.methods({
 
         if (!snappedPoke){
             console.log('unique snap');
-            targetPoke.seenBy = [Meteor.userId()];    
+            targetPoke.seenBy = Meteor.userId(); 
+            targetPoke.oldId = targetPoke._id; 
+            targetPoke._id = Random.id();  
             console.log(targetPoke);
             SnappedPokemon.insert(targetPoke);
-            Activity.insert({userName: Meteor.user().username, time: new Date(), happening: 'snapped a picture of ' +  targetPoke.name}); 
-            console.log(Meteor.user().username);
+            Activity.insert({userId: Meteor.userId(),userName: Meteor.user().username, time: new Date(), happening: 'snapped a picture of ' +  targetPoke.name}); 
+            Meteor.setTimeout(function(){
+                WildPokemon.remove({});
+            }, 500);
             return 'snapped';
         } else {
-            isSeen = snappedPoke.seenBy.indexOf(Meteor.userId());
-            if (isSeen === -1){
-                Activity.insert({userName: Meteor.user().profile._id, time: new Date(), happening: 'snapped a picture of ' +  targetPoke.name}); 
-                SnappedPokemon.update({_id : targetPoke._id} ,{ $push: { seenBy: Meteor.userId() }});
-                console.log('normal snap');
-                return 'snapped by new user';
-            } else {
-                return 'already snapped';
-            }
+            return 'already snapped';
         }
 
         return fail;

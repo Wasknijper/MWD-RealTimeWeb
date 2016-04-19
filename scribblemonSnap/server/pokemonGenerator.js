@@ -28,4 +28,4 @@ Meteor.setInterval(function(){
     } else {
         WildPokemon.remove({});
     }
-}, 3000);
+}, 10000);

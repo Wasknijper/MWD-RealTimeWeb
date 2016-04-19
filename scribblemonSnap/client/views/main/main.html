@@ -4,9 +4,10 @@
 
 <body>
   <header>
-    <h1>Scribblemon Snap!</h1>
-    {{> loginButtons}}
+    <a href="{{pathFor route='home'}}"><h1>Scribblemon Snap!</h1></a>
+    <nav>
+    	{{> loginButtons}}
+      <a href="#test">Test link </a>
+    </nav>
   </header>
-  {{>pokeCanvas}}
-  {{>activityFeed}}
 </body>

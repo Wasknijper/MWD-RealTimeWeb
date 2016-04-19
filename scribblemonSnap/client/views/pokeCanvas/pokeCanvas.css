@@ -1,4 +1,18 @@
-img#pokemon{
+#pokemon{
 	width: 300px;
 	height: 300px;
+	position: absolute;
+	z-index: 1000;
+}
+
+#canvasForeground {
+	z-index: 10;
+}
+
+#canvasPokemon {
+	z-index: 9;
+}
+
+#canvasBg {
+	z-index: 8;
 }

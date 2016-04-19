@@ -1,0 +1,12 @@
+<template name='home'>
+  {{#if currentUser}}
+      <main id="main">
+      {{>pokeCanvas}}
+      </main>
+    {{>activityFeed}}
+  {{else}}
+    <main id="main" class="full-width">
+      <p> In order to play you'll need to login or create an account!</p>
+    </main>
+  {{/if}}
+</template>
