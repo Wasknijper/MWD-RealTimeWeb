@@ -3,6 +3,7 @@
 	width: 20em;
 	height: 20em;
 	list-style: none;
+	margin-bottom: 1em;
 }
 
 .snappedPokemon img{
@@ -10,9 +11,6 @@
     border: 4px solid;
 }
 
-.snappedPokemon li{
-	margin-bottom: 1em;
-}
 
 .profile h3 {
 	padding-bottom: 0;
