@@ -1,0 +1,11 @@
+.snappedPokemon{
+	float: left;
+	width: 20em;
+	height: 20em;
+	list-style: none;
+}
+
+.snappedPokemon img{
+	width: 90%;
+    border: 4px solid;
+}

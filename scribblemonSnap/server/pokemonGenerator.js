@@ -4,7 +4,6 @@ randomPokemon = function(rarityType){
     var random = Math.floor( Math.random() * array.length );
     var pokemon = array[random];
     pokemon._id = Random.id();
-    console.log(pokemon._id + ' ' + pokemon.name + ' ' + rarityType);
     WildPokemon.insert(pokemon);
 };
 

@@ -1,9 +1,16 @@
 <template name="profile">
-    <h2>Username</h2>
-    <p>{{username}}</p>
-    <p>{{_id}}</p>
+	<div class="profile">
+		{{#if username}}
+		    <h2>{{username}}</h2>
 
-    <h3>Snaps</h3>
-    <ul>
-    </ul>
+		    <h3>Snaps</h3>
+		    <ul>
+		    	{{#each snaps}}
+	    			{{>snappedPokemon}}
+	  			{{/each}}
+		    </ul>
+	    {{else}}
+	    	{{>userNotFound}}
+	    {{/if}}
+	</div>
 </template>

@@ -7,6 +7,11 @@
 body {
 }
 
+h2, h3 {
+	padding-bottom: 1em;
+}
+
+
 header {
 	height: 4em;
 	padding: 1em;
@@ -99,6 +104,10 @@ p#message {
 #message {
 	border-right: 3px solid;
 	border-bottom: 3px solid;
+}
+
+.profile {
+	padding: 1em;
 }
 
 @-webkit-keyframes fadeIn { from { opacity:0; opacity: 1\9; max-height: 0; padding: 0 1em;/* IE9 only */ } to { opacity:1; max-height: 500px;  padding: 1em 1em;} }

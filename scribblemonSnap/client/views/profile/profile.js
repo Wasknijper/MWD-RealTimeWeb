@@ -1,15 +1,20 @@
+var href, profileId;
+
 Template.profile.onCreated(function pokeCanvasOnCreated() {
-	Meteor.subscribe('snappedByUser', this.id);
+	href = window.location.href;
+	profileId = href.substr(href.lastIndexOf('/') + 1);
+	Meteor.subscribe('snappedByUser', profileId);
 });
 
 
 Template.pokeCanvas.onRendered(function () {
-	
 });
 
 
 Template.profile.helpers({
 	snaps: function() {
-		return SnappedPokemon.find({'seenBy.$' : this.id});
+		// var href = window.location.href;
+		// var profileId = href.substr(href.lastIndexOf('/') + 1);
+		return SnappedPokemon.find({seenBy : profileId}, {sort: {time: -1}});
 	}
 });

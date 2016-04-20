@@ -1,4 +1,4 @@
-var pokemon, positionX, positionY, pokeSize;
+var pokemon, positionX, positionY, pokeSize, canvasBg, canvasPokemon, canvasForeground,cropX, cropY;
 
 Template.pokeCanvas.onCreated(function pokeCanvasOnCreated() {
 	Session.set('message', '');
@@ -8,9 +8,9 @@ Template.pokeCanvas.onCreated(function pokeCanvasOnCreated() {
 Template.pokeCanvas.onRendered(function () {
 	Meteor.subscribe('wildPokemon');
 
-	var canvasBg = document.getElementById("canvasBg");
-	var canvasPokemon = document.getElementById("canvasPokemon");
-	var canvasForeground = document.getElementById("canvasForeground");
+	canvasBg = document.getElementById("canvasBg");
+	canvasPokemon = document.getElementById("canvasPokemon");
+	canvasForeground = document.getElementById("canvasForeground");
 
 	canvasBg.onselectstart = function () { return false; }
 	canvasPokemon.onselectstart = function () { return false; }
@@ -123,6 +123,53 @@ Template.pokeCanvas.onRendered(function () {
 });
 
 
+savePokemonImg = function(){
+	//saving canvasses http://stackoverflow.com/questions/6685403/merging-two-canvases
+	var saveCanvas = document.createElement('canvas');
+	var cropCanvas= document.createElement('canvas');
+	var pictureWidth = 400;
+
+	saveCanvas.width = $('#canvasBg').width();
+	saveCanvas.height = $('#canvasBg').width();
+	cropCanvas.width = cropCanvas.height = pictureWidth;
+
+	var saveCanvasCtx = saveCanvas.getContext('2d');
+	var cropCanvasCtx = cropCanvas.getContext('2d');
+
+	saveCanvasCtx.drawImage(canvasBg, 0, 0);
+	saveCanvasCtx.drawImage(canvasPokemon, 0, 0);
+	saveCanvasCtx.drawImage(canvasForeground, 0, 0);
+	
+	var tempJpg = new Image();
+	tempJpg.src = saveCanvas.toDataURL(saveCanvas, 0, 0);
+
+	if((positionX + pictureWidth) > saveCanvas.width){
+		var leftoverX = (positionX + pictureWidth) - saveCanvas.width;
+		cropX = -Math.abs(positionX - leftoverX);
+	} else {
+		cropX = -Math.abs(positionX);		
+	}
+
+	if((positionY + pictureWidth) > saveCanvas.width){
+		var leftoverY = (positionY + pictureWidth) - saveCanvas.width;
+		cropY = -Math.abs(positionY - leftoverY);
+	} else {
+		cropY = -Math.abs(positionY);		
+	}	
+
+	cropY = -Math.abs(positionY);
+
+	console.log('x: '+ cropX);
+	console.log('y: '+ cropY);
+
+	cropCanvasCtx.fillStyle = "white";
+	cropCanvasCtx.fillRect(0, 0, cropCanvas.width, cropCanvas.height);
+	cropCanvasCtx.drawImage(tempJpg, cropX, cropY);
+
+	var jpg = cropCanvas.toDataURL("image/jpeg", 1);
+
+	return jpg;
+};
 
 
 Template.pokeCanvas.events({ 
@@ -130,6 +177,10 @@ Template.pokeCanvas.events({
 		var parentOffset = $('#canvasForeground').offset(); 
    		var relX = e.pageX - parentOffset.left;
    		var relY = e.pageY - parentOffset.top;
+
+   		var pictureLink = savePokemonImg();
+
+   		pokemon.picture = pictureLink;
 
    		if (relY > positionY && relY < (positionY + pokeSize) && relX > positionX && relX < (positionX + pokeSize)) {
    			Meteor.call('snapPokemon', pokemon, function(err, res){

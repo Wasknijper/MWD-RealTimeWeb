@@ -11,7 +11,7 @@ Meteor.publish('userById', function(userId){
 });
 
 Meteor.publish('snappedByUser', function(userId){
-  return SnappedPokemon.find({'seenBy.$' : userId});
+  return SnappedPokemon.find({seenBy : userId});
 });
 
 

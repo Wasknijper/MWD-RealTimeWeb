@@ -21,8 +21,6 @@ Router.route('/profile/:id', {
 	data: function() { 
 		if(Meteor.users.findOne({_id: this.params.id})){
 			return Meteor.users.findOne({_id: this.params.id});
-		} else {
-			Router.go('userNotFound');
 		}
 	}
 });

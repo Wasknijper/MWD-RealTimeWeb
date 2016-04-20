@@ -13,6 +13,7 @@ Meteor.methods({
         if (!snappedPoke){
             console.log('unique snap');
             targetPoke.seenBy = Meteor.userId(); 
+            targetPoke.time = new Date();
             targetPoke.oldId = targetPoke._id; 
             targetPoke._id = Random.id();  
             console.log(targetPoke);
