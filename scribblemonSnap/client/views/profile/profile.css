@@ -10,6 +10,10 @@
     border: 4px solid;
 }
 
-.snappedPokemon h4{
-	padding-top: 1em;
+.snappedPokemon li{
+	margin-bottom: 1em;
+}
+
+.profile h3 {
+	padding-bottom: 0;
 }
